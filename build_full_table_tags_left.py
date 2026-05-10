@@ -135,7 +135,7 @@ def tag_summary(records: list[dict]) -> dict:
 
 
 def build_html(records: list[dict]) -> str:
-    generated_at = datetime.now().strftime("%d.%m.%Y %H:%M")
+    generated_at = os.environ.get("FULL_TABLE_GENERATED_AT") or datetime.now().strftime("%d.%m.%Y %H:%M")
     disclaimer = (
         "Каталог подготовлен для внутренней работы компаний Группы и предназначен для "
         "предварительного поиска релевантных кейсов, технологий и решений. Материалы "
